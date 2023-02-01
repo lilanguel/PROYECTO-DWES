@@ -3,22 +3,26 @@ require('dotenv').config();
 var app = express();
 var mongoose = require('mongoose');
 var pedidos = require('./routes/pedidosRoutes')
-
+var articulos = require('./routes/articulosRoutes')
+var clientes = require('./routes/clientesRoutes')
+var resenas = require('./routes/resenasRoutes')
 
 // Conexión //
 
-mongoose.connect('mongodb+srv://Mario:1234@shamedb.d9vcgir.mongodb.net/shameDb?retryWrites=true&w=majority').then(() => console.log("Connected to MongoDB Atlas"))
-    .catch((error) => console.error(error));
+mongoose.connect(process.env.DB_URI).then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((error) => console.error(error));
 
 // MiddleWares
 
 // Rutas
 
-app.get("/pedidos", pedidos );
-
+app.get("/pedidos", pedidos);
+app.get("/articulos", articulos);
+app.get("/clientes", clientes);
+app.get("/resenas", resenas);
 
 // Server Listenning //
 
-app.listen(9000,()=>
+app.listen(9000, () =>
   console.log("Servidor escuchando en el puerto 9000")
 )
