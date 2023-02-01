@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var pedidos = require('./routes/pedidosRoutes')
 var articulos = require('./routes/articulosRoutes')
 var clientes = require('./routes/clientesRoutes')
-var resenas = require('./routes/resenasRoutes')
+var resenias = require('./routes/reseniasRoutes')
 
 // Conexión //
 
@@ -19,7 +19,7 @@ mongoose.connect(process.env.DB_URI).then(() => console.log("Connected to MongoD
 app.get("/pedidos", pedidos);
 app.get("/articulos", articulos);
 app.get("/clientes", clientes);
-app.get("/resenas", resenas);
+app.get("/resenas", resenias);
 
 // Server Listenning //
 
