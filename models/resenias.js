@@ -26,5 +26,5 @@ const reseniaSchema = mongoose.Schema({
 
 })
 
-module.exports = mongoose.model("pedido", reseniaSchema)
+module.exports = mongoose.model("resenia", reseniaSchema)
 
