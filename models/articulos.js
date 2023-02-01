@@ -27,7 +27,7 @@ const articuloSchema = mongoose.Schema({
         enum: ["accesorio", "calzado", "ropa"],
         required: true
     },
-    resenas: {
+    resenias: {
         type: Array,
         required: true
     }
