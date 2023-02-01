@@ -9,7 +9,7 @@ router.post("/pedidos", (req, res) => {
     pedido.save().then((data) => res.json(data)).catch((error) => res.json({ message: error }));
 });
 
-// get all users
+// get all pedidos
 router.get("/pedidos", (req, res) => {
     pedidoSchema
         .find()

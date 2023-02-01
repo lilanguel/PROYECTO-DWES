@@ -2,7 +2,7 @@ const express = require("express");
 const articuloSchema = require("../models/articulos.js");
 const router = express.Router();
 
-// create pedido
+// create articulo
 
 router.post("/articulos", (req, res) => {
     const articulo = articuloSchema(req.body);
@@ -11,7 +11,7 @@ router.post("/articulos", (req, res) => {
     }));
 });
 
-// get all users
+// get all articulos
 router.get("/articulos", (req, res) => {
     articuloSchema
         .find()
