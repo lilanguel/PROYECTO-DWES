@@ -6,7 +6,7 @@ const articuloSchema = mongoose.Schema({
         required: true
     },
     precio: {
-        type: Float,
+        type: Number,
         required: true
     },
     tallas: {
