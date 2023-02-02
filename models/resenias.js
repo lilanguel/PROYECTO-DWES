@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const articulo = require("./clientes")
+
 const reseniaSchema = mongoose.Schema({
 
     comentario:{
@@ -19,7 +21,8 @@ const reseniaSchema = mongoose.Schema({
         required:true
     },
     ID_Cliente:{
-        type: String,
+        type: Schema.ObjectId,
+        ref:"cliente",
         required:true
     }
 
