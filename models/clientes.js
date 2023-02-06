@@ -21,6 +21,14 @@ const clienteSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    pais:{
+        type:String,
+        required:true
+    },
+    codigo_postal:{
+        type:String,
+        required:true
+    },
     telefono: {
         type: String,
         required: true

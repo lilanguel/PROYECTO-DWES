@@ -10,6 +10,7 @@ var articulos = require('./routes/articulosRoutes')
 var clientes = require('./routes/clientesRoutes')
 var resenias = require('./routes/reseniasRoutes')
 var indexRouter = require('./routes/index');
+var registerRouter = require("./routes/registro");
 
 
 // Conexión //
@@ -30,6 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use("/registro", registerRouter);
 
 // Rutas
 

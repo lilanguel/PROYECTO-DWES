@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-
-const articulo = require("./clientes")
+const mongoose = require('mongoose');
+const cliente = require("./clientes.js");
+const Schema = mongoose.Schema;
 
 const reseniaSchema = mongoose.Schema({
 
@@ -21,12 +21,10 @@ const reseniaSchema = mongoose.Schema({
         required:true
     },
     ID_Cliente:{
-        type: Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref:"cliente",
         required:true
     }
-
-
 })
 
 module.exports = mongoose.model("resenia", reseniaSchema)
