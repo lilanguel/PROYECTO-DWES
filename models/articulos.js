@@ -13,7 +13,6 @@ const articuloSchema = mongoose.Schema({
     },
     tallas: {
         type: String,
-        enum: ["S", "M", "L", "XL"],
         required: true
     },
     descripcion: {
