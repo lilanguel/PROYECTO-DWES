@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const Schema = mongoose.Schema;
 const clientes = require("./clientes")
 
 const reseniaSchema = mongoose.Schema({
