@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const articulo = require("./clientes")
+const clientes = require("./clientes")
 
 const reseniaSchema = mongoose.Schema({
 
@@ -22,7 +22,7 @@ const reseniaSchema = mongoose.Schema({
     },
     ID_Cliente:{
         type: Schema.ObjectId,
-        ref:"cliente",
+        ref:"clientes",
         required:true
     }
 
