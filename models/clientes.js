@@ -1,4 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const pedido = require("./pedidos.js");
 
 const clienteSchema = mongoose.Schema({
     nombre_usuario: {
@@ -21,13 +23,13 @@ const clienteSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    pais:{
-        type:String,
-        required:true
+    pais: {
+        type: String,
+        required: true
     },
-    codigo_postal:{
-        type:String,
-        required:true
+    codigo_postal: {
+        type: String,
+        required: true
     },
     telefono: {
         type: String,
@@ -46,10 +48,10 @@ const clienteSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    pedidos: {
-        type:Array,
-        required: true
-    }
+    pedidos: [{
+        type: Schema.Types.ObjectId,
+        ref: 'pedido'
+    }]
 })
 
 module.exports = mongoose.model("cliente", clienteSchema)
