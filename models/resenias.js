@@ -1,31 +1,29 @@
-const mongoose = require('mongoose');
-const cliente = require("./clientes.js");
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
+const cliente = require("./clientes")
 
 const reseniaSchema = mongoose.Schema({
-
-    comentario:{
+    comentario: {
         type: String,
         required: true
     },
-    valoracion:{
+    valoracion: {
         type: String,
         required: true
     },
-    fecha:{
+    fecha: {
         type: Date,
-        required:true
+        required: true
     },
-    pedido_verificado:{
+    pedido_verificado: {
         type: Boolean,
-        required:true
+        required: true
     },
-    ID_Cliente:{
+    ID_Cliente: {
         type: Schema.Types.ObjectId,
-        ref:"cliente",
-        required:true
+        ref: "cliente",
+        required: true
     }
 })
 
 module.exports = mongoose.model("resenia", reseniaSchema)
-
