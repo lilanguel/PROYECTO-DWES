@@ -30,16 +30,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Rutas
 app.use('/', indexRouter);
 app.use("/registro", registerRouter);
-
-// Rutas
-
-app.get("/pedidos", pedidos);
-app.get("/articulos", articulos);
-app.get("/clientes", clientes);
-app.get("/resenas", resenias);
-
+app.use('/clientes', clientes);
+app.use('/pedidos', pedidos);
+app.use('/articulos', articulos);
+app.use('/resenas', resenias);
 
 // Server Listenning //
 
