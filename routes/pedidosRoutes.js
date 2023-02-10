@@ -2,19 +2,48 @@ const express = require("express");
 const pedidoSchema = require("../models/pedidos.js");
 const router = express.Router();
 
-// create pedido
-
-router.post("/pedidos", (req, res) => {
-    const pedido = pedidoSchema(req.body);
-    pedido.save().then((data) => res.json(data)).catch((error) => res.json({ message: error }));
+// POST de un nuevo pedido
+router.post('/', function (req, res, next) {
+    pedidoSchema.create(req.body, function (err, userinfo) {
+        if (err) res.status(500).send(err);
+        else res.sendStatus(200);
+    });
 });
 
-// get all pedidos
-router.get("/pedidos", (req, res) => {
+// PUT de un pedido existente identificado por su Id
+router.put('/:id', function (req, res, next) {
+    pedidoSchema.findByIdAndUpdate(req.params.id, req.body, function (err,
+                                                                       userinfo) {
+        if (err) res.status(500).send(err);
+        else res.sendStatus(200);
+    });
+});
+
+// DELETE de un pedido existente identificado por su Id
+router.delete('/:id', function (req, res, next) {
+    pedidoSchema.findByIdAndDelete(req.params.id, function (err, userinfo) {
+        if (err) res.status(500).send(err);
+        else res.sendStatus(200);
+    });
+});
+
+// GET all de pedidos
+router.get("/", (req, res) => {
     pedidoSchema
         .find()
         .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+        .catch((error) => res.json({
+            message: error
+        }));
+});
+
+// GET de un pedido específico
+router.get("/:id", (req, res) => {
+    pedidoSchema.findById(req.params.id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({
+            message: error
+        }));
 });
 
 
