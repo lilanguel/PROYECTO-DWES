@@ -28,7 +28,7 @@ router.delete('/:id', function (req, res, next) {
 });
 
 // get all reseñas
-router.get("/resenias", (req, res) => {
+router.get("/", (req, res) => {
     reseniaSchema
         .find()
         .then((data) => res.json(data))
