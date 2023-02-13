@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const pedido = require("./pedidos.js");
+var bcrypt = require('bcryptjs');
 
 const clienteSchema = mongoose.Schema({
     nombre_usuario: {
@@ -53,5 +54,12 @@ const clienteSchema = mongoose.Schema({
         ref: 'pedido'
     }]
 })
+
+clienteSchema.methods.comparePassword = function(candidatePassword, cb) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+        if (err) return cb(err);
+        cb(null, isMatch);
+    });
+};
 
 module.exports = mongoose.model("cliente", clienteSchema)
