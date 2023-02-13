@@ -37,5 +37,13 @@ router.get("/", (req, res) => {
         }));
 });
 
+// GET de un usuario específico
+router.get("/:id", (req, res) => {
+    clienteSchema.findById(req.params.id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({
+            message: error
+        }));
+});
 
 module.exports = router

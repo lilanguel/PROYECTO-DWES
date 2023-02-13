@@ -23,6 +23,7 @@ const pedidoSchema = mongoose.Schema({
         required:true
     },articulos: [{
         type: Schema.Types.ObjectId,
+        required: true,
         ref: 'articulos'
     }]
 

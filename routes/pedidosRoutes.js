@@ -13,7 +13,7 @@ router.post('/', function (req, res, next) {
 // PUT de un pedido existente identificado por su Id
 router.put('/:id', function (req, res, next) {
     pedidoSchema.findByIdAndUpdate(req.params.id, req.body, function (err,
-                                                                       userinfo) {
+        userinfo) {
         if (err) res.status(500).send(err);
         else res.sendStatus(200);
     });
