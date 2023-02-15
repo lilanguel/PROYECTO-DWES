@@ -2,17 +2,33 @@ const express = require("express");
 const clienteSchema = require("../models/clientes.js");
 const router = express.Router();
 
-// create cliente
+// POST de un nuevo usuario
+router.post('/', function (req, res, next) {
+    clienteSchema.create(req.body, function (err, userinfo) {
+        if (err) res.status(500).send(err);
+        else res.sendStatus(200);
+    });
+});
 
-router.post("/clientes", (req, res) => {
-    const cliente = clienteSchema(req.body);
-    cliente.save().then((data) => res.json(data)).catch((error) => res.json({
-        message: error
-    }));
+// PUT de un usuario existente identificado por su Id
+router.put('/:id', function (req, res, next) {
+    clienteSchema.findByIdAndUpdate(req.params.id, req.body, function (err,
+        userinfo) {
+        if (err) res.status(500).send(err);
+        else res.sendStatus(200);
+    });
+});
+
+// DELETE de un usuario existente identificado por su Id
+router.delete('/:id', function (req, res, next) {
+    clienteSchema.findByIdAndDelete(req.params.id, function (err, userinfo) {
+        if (err) res.status(500).send(err);
+        else res.sendStatus(200);
+    });
 });
 
 // get all clientes
-router.get("/clientes", (req, res) => {
+router.get("/", (req, res) => {
     clienteSchema
         .find()
         .then((data) => res.json(data))
@@ -21,5 +37,13 @@ router.get("/clientes", (req, res) => {
         }));
 });
 
+// GET de un usuario específico
+router.get("/:id", (req, res) => {
+    clienteSchema.findById(req.params.id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({
+            message: error
+        }));
+});
 
 module.exports = router

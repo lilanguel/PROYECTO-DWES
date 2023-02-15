@@ -1,4 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const resenia = require("./resenias.js");
 
 const articuloSchema = mongoose.Schema({
     nombre: {
@@ -11,7 +13,6 @@ const articuloSchema = mongoose.Schema({
     },
     tallas: {
         type: String,
-        enum: ["S", "M", "L", "XL"],
         required: true
     },
     descripcion: {
@@ -27,10 +28,10 @@ const articuloSchema = mongoose.Schema({
         enum: ["accesorio", "calzado", "ropa"],
         required: true
     },
-    resenias: {
-        type: Array,
-        required: true
-    }
+    resenias: [{
+        type: Schema.Types.ObjectId,
+        ref: 'resenia'
+    }]
 })
 
 module.exports = mongoose.model("articulo", articuloSchema)

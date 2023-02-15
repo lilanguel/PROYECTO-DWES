@@ -5,12 +5,13 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
-var pedidos = require('./routes/pedidosRoutes')
-var articulos = require('./routes/articulosRoutes')
-var clientes = require('./routes/clientesRoutes')
-var resenias = require('./routes/reseniasRoutes')
+var pedidos = require('./routes/pedidosRoutes');
+var articulos = require('./routes/articulosRoutes');
+var clientes = require('./routes/clientesRoutes');
+var resenias = require('./routes/reseniasRoutes');
 var indexRouter = require('./routes/index');
-
+var registerRouter = require("./routes/registro");
+var loginRouter = require("./routes/login");
 
 // Conexión //
 
@@ -29,14 +30,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-
 // Rutas
-
-app.get("/pedidos", pedidos);
-app.get("/articulos", articulos);
-app.get("/clientes", clientes);
-app.get("/resenas", resenias);
+app.use('/', indexRouter);
+app.use("/registro", registerRouter);
+app.use('/login', loginRouter);
+app.use('/clientes', clientes);
+app.use('/pedidos', pedidos);
+app.use('/articulos', articulos);
+app.use('/resenas', resenias);
 
 
 // Server Listenning //
