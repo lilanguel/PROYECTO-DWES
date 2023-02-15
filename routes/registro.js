@@ -10,8 +10,11 @@ router.get('/', function (req, res, next) {
 // POST de un nuevo usuario
 router.post('/', function (req, res, next) {
     clienteSchema.create(req.body, function (err, userinfo) {
-        if (err) res.status(500).send(err);
-        else res.sendStatus(200);
+        if (err) {
+            res.redirect('registro');
+        } else {
+            res.redirect('main');
+        }
     });
 });
 

@@ -25,13 +25,30 @@
                     <li><a href="#" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
                 </ul>
 
-                <div class="text-end">
-                    <a href="/login" class="btn btn-outline-light me-2">Iniciar Sesión</a>
-                    <a href="/registro" class="btn btn-warning">Registro</a>
+                <!-- Example split danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-warning">Mi usuario</button>
+                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/editUser">Editar Usuario</a></li>
+                        <li><a class="dropdown-item" href="/pedidos">Mis pedidos</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/">Cerrar sesión</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Tus datos -->
+    <div class="container">
+        
+    </div>
 
     <!-- Editar Usuario -->
     <div class="container">

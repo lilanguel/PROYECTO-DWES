@@ -19,9 +19,11 @@ router.post('/', function (req, res, next) {
                 if (err) return next(err);
                 // Si el password es correcto...
                 if (isMatch) {
-                    res.render('main');
+                    console.log('password correcta')
+                    res.redirect('main');
                 } else {
-                    res.render('login');
+                    console.log('password incorrecta')
+                    res.redirect('login');
                 }
             });
         } else res.status(401).send({
