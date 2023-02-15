@@ -19,13 +19,9 @@ router.post('/', function (req, res, next) {
                 if (err) return next(err);
                 // Si el password es correcto...
                 if (isMatch) {
-                    res.status(200).send({
-                        message: 'ok'
-                    });
+                    res.render('main');
                 } else {
-                    res.status(200).send({
-                        message: 'la password no coincide'
-                    });
+                    res.render('login');
                 }
             });
         } else res.status(401).send({

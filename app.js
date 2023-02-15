@@ -12,6 +12,8 @@ var resenias = require('./routes/reseniasRoutes');
 var indexRouter = require('./routes/index');
 var registerRouter = require("./routes/registro");
 var loginRouter = require("./routes/login");
+var editUserRouter = require("./routes/editUser");
+var mainRouter = require("./routes/main");
 
 // Conexión //
 
@@ -26,14 +28,18 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.use('/', indexRouter);
+app.use('/main', mainRouter);
 app.use("/registro", registerRouter);
 app.use('/login', loginRouter);
+app.use('/editUser', editUserRouter);
 app.use('/clientes', clientes);
 app.use('/pedidos', pedidos);
 app.use('/articulos', articulos);

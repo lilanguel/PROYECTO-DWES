@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img src="/images/logo SHAME.png" alt="logo-SHAME" width="50px">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Ofertas</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Lo último</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
+                </ul>
+
+                <div class="text-end">
+                    <a href="/login" class="btn btn-outline-light me-2">Iniciar Sesión</a>
+                    <a href="/registro" class="btn btn-warning">Registro</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Editar Usuario -->
+    <div class="container">
+        <h4 class="mb-3">Editar usuario</h4>
+        <form class="needs-validation" method="put">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="firstName" name="nombre" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="lastName" name="apellidos" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="username" class="form-label">Nombre de usuario</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" id="username" name="nombre_usuario" required>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="address" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="address" name="direccion" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="city" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="city" name="ciudad" required>
+                </div>
+
+                <div class="col-md-5">
+                    <label for="country" class="form-label">País</label>
+                    <input type="text" class="form-control" id="country" name="pais" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="postal_code" class="form-label">Código Postal</label>
+                    <input type="text" class="form-control" id="postal_code" name="codigo_postal" required>
+                </div>
+
+                <div class="col-md-5">
+                    <label for="phone" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="phone" name="telefono" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="sex" class="form-label">Sexo</label>
+                    <select class="form-select" id="sex" name="sexo" required>
+                        <option value="mujer">Mujer</option>
+                        <option value="hombre">Hombre</option>
+                    </select>
+                </div>
+
+                <div class="col-md-5">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+
+                <button class="w-100 btn btn-primary btn-lg" type="submit" id="sendUser">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Explorar</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ofertas</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lo último</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Contacto</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">example@gmail.com</li>
+                        <li class="nav-item mb-2">+34 XXX XX XX XX</li>
+                        <li class="nav-item mb-2">C. Mamerto, Sevilla</li>
+                        <li class="nav-item mb-2">9:00 - 21:00</li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Redes Sociales</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="https://www.instagram.com/"
+                                class="nav-link p-0 text-muted">Instagram</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.facebook.com/"
+                                class="nav-link p-0 text-muted">Facebook</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.tiktok.com/" class="nav-link p-0 text-muted">Tik
+                                Tok</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.twitter.com/"
+                                class="nav-link p-0 text-muted">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.youtube.com/"
+                                class="nav-link p-0 text-muted">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Ayuda</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Términos y condiciones</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Política de privacidad</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookies</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Métodos de pago</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cancelación y
+                                devolución</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2023 Shame, Inc. Todos los derechos reservados.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#twitter"></use>
+                            </svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#instagram"></use>
+                            </svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#facebook"></use>
+                            </svg></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
