@@ -53,7 +53,11 @@ const clienteSchema = mongoose.Schema({
     pedidos: [{
         type: Schema.Types.ObjectId,
         ref: 'pedido'
-    }]
+    }],
+    admin: {
+        type: Boolean,
+        default: false
+    }
 })
 
 clienteSchema.methods.comparePassword = function (candidatePassword, cb) {

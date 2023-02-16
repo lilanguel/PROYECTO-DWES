@@ -20,7 +20,7 @@ router.post('/', function (req, res, next) {
                 // Si el password es correcto...
                 if (isMatch) {
                     console.log('password correcta')
-                    res.redirect('main');
+                    res.redirect(`main/:${req.body.nombre_usuario}`);
                 } else {
                     console.log('password incorrecta')
                     res.redirect('login');
