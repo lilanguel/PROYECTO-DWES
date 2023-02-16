@@ -20,6 +20,7 @@ const reseniaSchema = mongoose.Schema({
         required: true
     },
     ID_Cliente: {
+        default: null,
         type: Schema.Types.ObjectId,
         ref: "cliente",
         required: true

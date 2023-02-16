@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const articulos = require("./articulos.js");
-const clientes = require("./clientes.js");
+const cliente = require("./clientes.js");
 
 
 const pedidoSchema = mongoose.Schema({
@@ -14,7 +14,8 @@ const pedidoSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    clientes: {
+    cliente: {
+        required: true,
         type: Schema.Types.ObjectId,
         ref: 'clientes'
     },
@@ -26,8 +27,6 @@ const pedidoSchema = mongoose.Schema({
         required: true,
         ref: 'articulos'
     }]
-
-
 
 })
 

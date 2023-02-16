@@ -1,5 +1,6 @@
 const express = require("express");
 const pedidoSchema = require("../models/pedidos.js");
+const articulos = require("../models/articulos");
 const router = express.Router();
 
 // POST de un nuevo pedido
@@ -40,6 +41,16 @@ router.get("/", (req, res) => {
 // GET de un pedido específico
 router.get("/:id", (req, res) => {
     pedidoSchema.findById(req.params.id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({
+            message: error
+        }));
+});
+
+// GET de un pedido en específico además de traer solo el id y sus artículos
+
+router.get("/info/:id", (req, res) => {
+    pedidoSchema.findById(req.params.id).populate({ path: 'articulos'})
         .then((data) => res.json(data))
         .catch((error) => res.json({
             message: error

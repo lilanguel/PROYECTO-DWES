@@ -3,6 +3,7 @@ require('dotenv').config();
 var app = express();
 var path = require('path');
 var logger = require('morgan');
+console.log("https://www.youtube.com/watch?v=CEnIXb47eF0&t=31s")
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
 var pedidos = require('./routes/pedidosRoutes');
