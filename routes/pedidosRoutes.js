@@ -1,10 +1,12 @@
 const express = require("express");
 const pedidoSchema = require("../models/pedidos.js");
 const articulos = require("../models/articulos");
+const cliente = require("../models/clientes");
 const router = express.Router();
 
-// POST de un nuevo pedido
-router.post('/', function (req, res, next) {
+// POST de un nuevo pedido, la id pasada como parámetro es el id del cliente ya que no tiene sentido que haya un pedido sin cliente
+router.post('/:id', function (req, res, next) {
+    req.body.cliente = req.params.id
     pedidoSchema.create(req.body, function (err, userinfo) {
         if (err) res.status(500).send(err);
         else res.sendStatus(200);
@@ -23,7 +25,7 @@ router.put('/:id', function (req, res, next) {
 // DELETE de un pedido existente identificado por su Id
 router.delete('/:id', function (req, res, next) {
     pedidoSchema.findByIdAndDelete(req.params.id, function (err, userinfo) {
-        if (err) res.status(500).send(err);
+        if (err || req.body.confirmacion === false ) res.status(500).send(err);
         else res.sendStatus(200);
     });
 });
@@ -47,10 +49,29 @@ router.get("/:id", (req, res) => {
         }));
 });
 
-// GET de un pedido en específico además de traer solo el id y sus artículos
+// GET de un pedido en específico con la información de sus articulos refrenciados
 
 router.get("/info/:id", (req, res) => {
     pedidoSchema.findById(req.params.id).populate({ path: 'articulos'})
+        .then((data) => res.json(data))
+        .catch((error) => res.json({
+            message: error
+        }));
+});
+
+// PUT de un pedido cambiandole solamente el parámetro confirmación a true 
+router.put('/confirmacion/:id', function (req, res, next) {
+    pedidoSchema.findByIdAndUpdate(req.params.id, {confirmacion: true} , function (err,
+        userinfo) {
+        if (err) res.status(500).send(err);
+        else res.sendStatus(200);
+    });
+});
+
+// GET de un pedido en específico con la información del cliente que hizo el pedido
+
+router.get("/cliente/:id", (req, res) => {
+    pedidoSchema.findById(req.params.id).populate({ path: 'cliente'})
         .then((data) => res.json(data))
         .catch((error) => res.json({
             message: error

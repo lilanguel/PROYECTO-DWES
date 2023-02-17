@@ -50,5 +50,5 @@ app.use('/resenas', resenias);
 // Server Listenning //
 
 app.listen(process.env.PORT, () =>
-  console.log("Servidor escuchando en el puerto 9000")
+  console.log("Servidor escuchando en el puerto " + process.env.PORT)
 )

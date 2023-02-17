@@ -15,13 +15,14 @@ const pedidoSchema = mongoose.Schema({
         required: true
     },
     cliente: {
-        required: true,
+
         type: Schema.Types.ObjectId,
-        ref: 'clientes'
+        ref: 'cliente'
     },
     confirmacion:{
         type: Boolean,
         required:true
+        
     },articulos: [{
         type: Schema.Types.ObjectId,
         required: true,
