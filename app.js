@@ -44,7 +44,7 @@ app.use('/editUser', editUserRouter);
 app.use('/clientes', clientes);
 app.use('/pedidos', pedidos);
 app.use('/articulos', articulos);
-app.use('/resenas', resenias);
+app.use('/resenias', resenias);
 
 
 // Server Listenning //
