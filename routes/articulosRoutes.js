@@ -27,6 +27,16 @@ router.delete('/:id', function (req, res, next) {
     });
 });
 
+// GET de un articulo en específico con la información de sus reseñas refrenciados
+
+router.get("/info/:id", (req, res) => {
+    articuloSchema.findById(req.params.id).populate({ path: 'resenias'})
+        .then((data) => res.json(data))
+        .catch((error) => res.json({
+            message: error
+        }));
+});
+
 // get all articulos
 router.get("/", (req, res) => {
     articuloSchema

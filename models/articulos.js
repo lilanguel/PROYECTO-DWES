@@ -34,4 +34,4 @@ const articuloSchema = mongoose.Schema({
     }]
 })
 
-module.exports = mongoose.model("articulo", articuloSchema)
+module.exports = mongoose.model("articulos", articuloSchema)
