@@ -60,14 +60,14 @@ const clienteSchema = mongoose.Schema({
     }
 })
 
-clienteSchema.methods.comparePassword = function (candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
-        console.log('Password introducida: ' + candidatePassword);
-        console.log('Password verdadera: ' + this.password)
-        if (err) return cb(err);
-        cb(null, isMatch);
-    });
-};
+    clienteSchema.methods.comparePassword = function (candidatePassword, cb) {
+        bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
+            console.log('Password introducida: ' + candidatePassword);
+            console.log('Password verdadera: ' + this.password)
+            if (err) return cb(err);
+            cb(null, isMatch);
+        });
+    };
 
 clienteSchema.pre('save', function (next) {
     var user = this;
