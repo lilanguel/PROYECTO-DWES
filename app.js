@@ -6,6 +6,10 @@ var logger = require('morgan');
 console.log("https://www.youtube.com/watch?v=CEnIXb47eF0&t=31s")
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
+const {
+  body,
+  validationResult
+} = require('express-validator')
 var pedidos = require('./routes/pedidosRoutes');
 var articulos = require('./routes/articulosRoutes');
 var clientes = require('./routes/clientesRoutes');
