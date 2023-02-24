@@ -43,7 +43,7 @@
             <% validaciones.forEach((validacion)=>{%>
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <strong>
-                        <%= validaciones.msg %>
+                        <%= validacion.msg %>
                     </strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -54,13 +54,15 @@
                                 <div class="col-sm-6">
                                     <label for="firstName" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" id="firstName" placeholder="" name="nombre"
-                                        required>
+                                        required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.nombre %><%}%>">
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label for="lastName" class="form-label">Apellidos</label>
                                     <input type="text" class="form-control" id="lastName" placeholder=""
-                                        name="apellidos" required>
+                                        name="apellidos" required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.apellidos %><%}%>">
                                 </div>
 
                                 <div class="col-12">
@@ -68,44 +70,51 @@
                                     <div class="input-group has-validation">
                                         <span class="input-group-text">@</span>
                                         <input type="text" class="form-control" id="username" placeholder="Username"
-                                            name="nombre_usuario" required>
+                                            name="nombre_usuario" required
+                                            value="<% if(typeof valores !='undefined' ){ %><%= valores.nombre_usuario %><%}%>">
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" placeholder="you@example.com"
-                                        name="email" required>
+                                        name="email" required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.email %><%}%>">
                                 </div>
 
                                 <div class="col-12">
                                     <label for="address" class="form-label">Dirección</label>
                                     <input type="text" class="form-control" id="address" placeholder="1234 Main St"
-                                        name="direccion" required>
+                                        name="direccion" required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.direccion %><%}%>">
                                 </div>
 
                                 <div class="col-12">
                                     <label for="city" class="form-label">Ciudad</label>
                                     <input type="text" class="form-control" id="city" placeholder="" name="ciudad"
-                                        required>
+                                        required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.ciudad %><%}%>">
                                 </div>
 
                                 <div class="col-md-5">
                                     <label for="country" class="form-label">País</label>
                                     <input type="text" class="form-control" id="country" placeholder="" name="pais"
-                                        required>
+                                        required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.pais %><%}%>">
                                 </div>
 
                                 <div class="col-md-4">
                                     <label for="postal_code" class="form-label">Código Postal</label>
                                     <input type="text" class="form-control" id="postal_code" placeholder=""
-                                        name="codigo_postal" required>
+                                        name="codigo_postal" required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.codigo_postal %><%}%>">
                                 </div>
 
                                 <div class="col-md-5">
                                     <label for="phone" class="form-label">Teléfono</label>
                                     <input type="text" class="form-control" id="phone" placeholder="" name="telefono"
-                                        required>
+                                        required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.telefono%><%}%>">
                                 </div>
 
                                 <div class="col-md-4">
@@ -119,7 +128,8 @@
                                 <div class="col-md-5">
                                     <label for="password" class="form-label">Contraseña</label>
                                     <input type="password" class="form-control" id="password" placeholder=""
-                                        name="password" required>
+                                        name="password" required
+                                        value="<% if(typeof valores !='undefined' ){ %><%= valores.nombre %><%}%>">
                                 </div>
 
                                 <button class="w-100 btn btn-primary btn-lg" type="submit" id="sendUser">Enviar</button>

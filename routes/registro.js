@@ -49,7 +49,7 @@ router.post('/', [
     body('codigo_postal', 'Ingrese un codigo postal valido')
     .exists()
     .isLength({
-        min: 1,
+        min: 5,
         max: 5
     })
     .isNumeric(),
@@ -70,9 +70,12 @@ router.post('/', [
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         console.log(req.body)
-        const valores=req.body
-        const validaciones=errors.array()
-        res.render('registro',{validaciones:validaciones,valores:valores})
+        const valores = req.body
+        const validaciones = errors.array()
+        res.render('registro', {
+            validaciones: validaciones,
+            valores: valores
+        })
     } else {
         clienteSchema.create(req.body, function (err, userinfo) {
             if (err) {
