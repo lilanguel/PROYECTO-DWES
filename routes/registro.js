@@ -56,7 +56,7 @@ router.post('/', [
     body('telefono', 'Ingrese un telefono valido')
     .exists()
     .isLength({
-        min: 1,
+        min: 9,
         max: 9
     })
     .isNumeric(),
