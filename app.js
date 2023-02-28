@@ -19,6 +19,7 @@ var registerRouter = require("./routes/registro");
 var loginRouter = require("./routes/login");
 var editUserRouter = require("./routes/editUser");
 var mainRouter = require("./routes/main");
+var insertPedidosRouter = require("./routes/insertPedidos.js")
 
 // Conexión //
 
@@ -49,6 +50,7 @@ app.use('/clientes', clientes);
 app.use('/pedidos', pedidos);
 app.use('/articulos', articulos);
 app.use('/resenias', resenias);
+app.use('/insertPedido', insertPedidosRouter);
 
 
 // Server Listenning //

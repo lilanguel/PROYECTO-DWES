@@ -79,4 +79,10 @@ router.get("/cliente/:id", (req, res) => {
 });
 
 
+// Página para hacer post de un pedido con express validator // 
+
+router.get('/insertPedido', function (req, res, next) {
+    res.render('insertPedido');
+});
+
 module.exports = router

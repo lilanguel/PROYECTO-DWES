@@ -8,24 +8,27 @@ const pedidoSchema = mongoose.Schema({
 
     fecha:{
         type: Date,
-        required: true
+        default: Date.now
     },
     metodo_pago:{
         type: String,
         required: true
     },
     cliente: {
-
         type: Schema.Types.ObjectId,
         ref: 'cliente'
     },
     confirmacion:{
         type: Boolean,
-        required:true
+        default: false
         
-    },articulos: [{
+    },
+    direccion:{
+        type: String,
+
+    },
+    articulos: [{
         type: Schema.Types.ObjectId,
-        required: true,
         ref: 'articulos'
     }]
 
